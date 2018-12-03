@@ -1,0 +1,56 @@
+.app {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: calc(100% - 40px);
+    min-height: calc(100vh - 40px);
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+.product {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 0;
+    -ms-flex-pack: left;
+        justify-content: left;
+    -ms-flex-align: center;
+        align-items: center;
+    margin: -10px;
+}
+
+.row>* {
+    margin: 20px 10px 10px 10px;
+}
+
+.column {
+    -ms-flex: 1;
+        flex: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+}
+
+.button-group {
+    margin: 0 -10px;
+}
+
+.button-group>button {
+    cursor: pointer;
+    margin: 20px 10px;
+    padding: 10px 20px;
+}

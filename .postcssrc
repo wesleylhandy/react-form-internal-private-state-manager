@@ -1,0 +1,14 @@
+{
+  "plugins": {
+    "autoprefixer": {
+      "browsers": [
+        "Firefox >= 52",
+        "Chrome >= 55",
+        "ie >= 9",
+        "last 4 versions",
+        "Safari >= 9"
+      ],
+      "flexbox": "no-2009"
+    }
+  }
+}
