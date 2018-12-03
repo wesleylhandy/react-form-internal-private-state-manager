@@ -2,6 +2,16 @@
 
 ## To get it running: :running:
 
+This example depends on [`Parcel.js`](https://parceljs.org/)
+
+- Install `parcel-bundler` globally if you have not already done so:
+
+```shell
+    npm install -g parcel-bundler
+```
+
+- Download this repo, install, and run
+
 ```shell
     npm install
     npm run start
