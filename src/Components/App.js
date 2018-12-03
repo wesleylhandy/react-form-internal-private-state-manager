@@ -27,8 +27,7 @@ class App extends Component {
     }
     
     render() {
-      const {config, productList} = this.state
-      const { title, children } = config;
+      const {config: {title, children}, productList} = this.state
       const handlers = {
         handleClick: this.handleClick
       }

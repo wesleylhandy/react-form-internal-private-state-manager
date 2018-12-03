@@ -1,5 +1,5 @@
 /** 
- * 
+ * The following object is but one out many possible configurations that could be received.
  * The config object will be structured graphically, but will also include proprietary business logic. 
  * In production, another application with user authentication will allow WYSIWYG configuration of the form 
  * and will store this along side the relevant business data inside a internal DB 
