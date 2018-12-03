@@ -15,6 +15,8 @@
 
  For example, within `src/App.js`, the button click hander is defined, which calls a method within the cart object. The method returns an object corresponding to an update the application state.
 
+ Since the `Cart module` is evaluated already at root level, later imports do not cause the page to be reevaluated, but by importing the `instance`, other modules now have access to `cart methods`. See [the ECMA spec](http://www.ecma-international.org/ecma-262/6.0/#sec-abstract-module-records) and [this Stack Overflow discussion](https://stackoverflow.com/questions/37325667/does-es6-module-importing-execute-the-code-inside-the-imported-file)
+
  **For Example:** 
 
 ```javascript
