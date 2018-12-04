@@ -19,6 +19,8 @@ const config = {
                 children: [{ 
                     containerType: "Product", 
                     title: "Cool Product", 
+                    lazyLoad: "https://images.pexels.com/photos/235734/pexels-photo-235734.jpeg?auto=compress&dpr=auto&h=25&w=42&q=10",
+                    imgUrl: "https://images.pexels.com/photos/235734/pexels-photo-235734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=125&w=210",
                     description: "Only found in the depths of the Amazonian rainforest, this...", 
                     quantity: 0, 
                     cost: 20, 
@@ -31,6 +33,8 @@ const config = {
                 children: [{ 
                     containerType: "Product", 
                     title: "Awesome Product", 
+                    lazyLoad: "https://images.pexels.com/photos/321452/pexels-photo-321452.jpeg?auto=compress&dpr=auto&h=25&w=42&=10",
+                    imgUrl: "https://images.pexels.com/photos/321452/pexels-photo-321452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=125&w=210",
                     description: "Manufactured from pure gold, this...", 
                     quantity: 0, 
                     cost: 40, 
@@ -47,6 +51,8 @@ const config = {
                 children: [{ 
                     containerType: "Product", 
                     title: "Not So Cool Product", 
+                    lazyLoad: "https://images.pexels.com/photos/255514/pexels-photo-255514.jpeg?auto=compress&dpr=auto&h=25&w=42&q=10",
+                    imgUrl: "https://images.pexels.com/photos/255514/pexels-photo-255514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=125&w=210",
                     description: "Made of balsa-wood and glue, this...", 
                     quantity: 0, 
                     cost: 10, 
@@ -59,6 +65,8 @@ const config = {
                 children: [{
                     containerType: "Product",
                     title: "Very Bad Product",
+                    lazyLoad: "https://images.pexels.com/photos/196653/pexels-photo-196653.jpeg?auto=compress&dpr=auto&h=25&w=42&q=10",
+                    imgUrl: "https://images.pexels.com/photos/196653/pexels-photo-196653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=125&w=210",
                     description: "Don't buy, seriously; this...",
                     quantity: 0,
                     cost: 1,

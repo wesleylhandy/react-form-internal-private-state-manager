@@ -1,3 +1,4 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 .app {
     box-sizing: border-box;
     width: calc(100% - 40px);
@@ -5,6 +6,85 @@
     padding: 20px;
     margin: 20px;
     border: 1px solid black;
+    position: relative;
+}
+
+.cart {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.open-cart {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.cart-modal {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, .25);
+    transition: opacity 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+
+.cart-modal.faded {
+    opacity: 0 !important;
+    background: transparent !important;
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.modal-body {
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 20px;
+    background: #fff;
+    min-height: 50vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.cart-orders {
+    margin: 60px 0;
+}
+
+.order-headers,
+.order-single {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-total {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.order-headers>span,
+.order-single>span {
+    padding: 10px 0;
+    flex: 1 1 20%;
 }
 
 .product {
@@ -21,7 +101,7 @@
     width: 100%;
     padding: 10px 0;
     justify-content: left;
-    align-items: center;
+    align-items: flex-start;
     margin: -10px;
 }
 
@@ -43,4 +123,39 @@
     cursor: pointer;
     margin: 20px 10px;
     padding: 10px 20px;
+}
+
+.product-description-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.product-img {
+    margin: 20px 10px;
+    flex: 0 0 210px;
+    background: #ccc;
+}
+
+.product-description {
+    margin: 20px 10px;
+    flex: 1 1 calc(100% - 250px);
+}
+
+.img-responsive {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .products-list .column {
+        flex-basis: 100%;
+    }
 }

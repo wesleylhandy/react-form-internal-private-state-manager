@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Product({description, quantity, cost, title, cartId, handleClick }) {
+import LazyLoadingImg from './LazyLoadImg'
+
+function Product({description, quantity, cost, title, cartId, handleClick, imgUrl, lazyLoad }) {
     const total = quantity * cost
     const handleBtnClick = (e) => {
       const {name} = e.target;
@@ -9,9 +11,14 @@ function Product({description, quantity, cost, title, cartId, handleClick }) {
     return (
       <div className="product">
         { title ? <h2>{title}</h2> : null}
-        <div className="product-description">
-          <h3>Description</h3>
-          <div>{description}</div>
+        <div className="product-description-block">
+          <div className="product-img">
+            <LazyLoadingImg initial={lazyLoad} final={imgUrl} alt={title}/>
+          </div>
+          <div className="product-description">
+            <h3>Description</h3>
+            <div>{description}</div>
+          </div>
         </div>
         <div className="product-price">
           <h4>Price per Item</h4>

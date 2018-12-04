@@ -14,7 +14,7 @@ import cart from './Cart'
  */
 const renderChildren = (children, handlers = {}, productList = []) => {
 
-    return children ? children.map(({ children = [], containerType, title, description, quantity, cost, cartId, businessData }, ind) => {
+    return children ? children.map(({ children = [], containerType, title, description, imgUrl, lazyLoad, quantity, cost, cartId, businessData }, ind) => {
         let key = `${containerType}-${ind}`;
         switch (containerType) {
             case "ProductList":
@@ -45,7 +45,7 @@ const renderChildren = (children, handlers = {}, productList = []) => {
                             />
             case "Product":
                     // will either insert Product to cart on initial render or update quantity if necessary, could use optimzation
-                    const newQuantity = cart.addProduct(cartId, description, quantity, cost, businessData) ? quantity : cart.getProductQuantity(cartId)
+                    const newQuantity = cart.addProduct(cartId, description, title, quantity, cost, businessData) ? quantity : cart.getProductQuantity(cartId)
                     return <Product
                                 key = { key }
                                 title = { title }
@@ -56,6 +56,8 @@ const renderChildren = (children, handlers = {}, productList = []) => {
                                 handleClick = { handlers.handleClick }
                                 children = { children }
                                 productList = { productList }
+                                imgUrl = { imgUrl }
+                                lazyLoad = { lazyLoad }
                             />    
         }
     }) : null

@@ -9,6 +9,8 @@ class Cart {
         this.decrementProductQuantity = this.decrementProductQuantity.bind(this)
         this.getProductList = this.getProductList.bind(this)
         this.getIndex = this.getIndex.bind(this)
+        this.getCart = this.getCart.bind(this)
+        this.filterCart = this.filterCart.bind(this)
     }
 
     /**
@@ -20,13 +22,14 @@ class Cart {
      * @param {Object} businessData 
      * @returns {Boolean} - true if new object created, false if already existing
      */
-    addProduct(cartId, description, quantity = 0, cost, businessData = {}) {
+    addProduct(cartId, description, title, quantity = 0, cost, businessData = {}) {
         if (this.getIndex(this.productList, "cartId", cartId.toString()) > -1) {
             return false
         } else {
             this.productList = [...this.productList, {
                     cartId: cartId.toString(), 
                     description, 
+                    title,
                     quantity: +quantity, 
                     cost: +cost, 
                     businessData 
@@ -73,6 +76,30 @@ class Cart {
         }, []) || [];
         return list
     }
+
+    calculateTotal() {
+        const totalPrice = this.filterCart().reduce((total, prod)=>{
+            total+=prod.subTotal
+            return total
+        }, 0)
+        return totalPrice
+    }
+
+    filterCart() {
+        const filtered = this.productList.filter(prod=>prod.quantity > 0)
+        const orders = filtered.map(prod=>{
+            const {cartId, quantity, cost, title, ...rest} = prod
+            return { cartId, quantity, cost, title, subTotal: quantity * cost }
+        })
+        return orders
+    }
+
+    getCart() {
+        const orders = this.filterCart();
+        const totalPrice = this.calculateTotal()
+        return { orders, totalPrice }
+    }
+
 }
 
 const cart = new Cart();

@@ -5,6 +5,8 @@ import renderChildren from '../utils/renderChildren.js'
 // for importating the cart object. will only instantiate once, which was done at root level already
 import cart from '../utils/Cart.js'
 
+import ViewCart from './ViewCart.js'
+
 class App extends Component {
     constructor(props){
       super(props)
@@ -35,6 +37,7 @@ class App extends Component {
         <div className="app">
           <h1>{title}</h1>
           {renderChildren(children, handlers, productList)}
+          <ViewCart/>
         </div>
       )
     }
