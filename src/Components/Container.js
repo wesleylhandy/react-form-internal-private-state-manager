@@ -5,7 +5,7 @@ import renderChildren from '../utils/renderChildren'
 function Container({ title, children, className, handlers, productList}) {
     return (
       <div className={className}>
-        {title ? <h3>{title}</h3> : null}
+        {title && <h3>{title}</h3>}
         {renderChildren(children, handlers, productList)}
       </div>
     )

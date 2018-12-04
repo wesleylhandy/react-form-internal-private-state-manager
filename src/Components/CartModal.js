@@ -17,7 +17,7 @@ function CartModal({open, totalPrice, orders, handleClick }) {
                         <span>Product Id</span><span>Title</span><span>Cost</span><span>#</span><span>SubTotal</span>
                     </div>
                     {
-                        orders.map((order, ind)=>{
+                        orders && orders.map((order, ind)=>{
                             return (
                                 <div className="order-single" key={`order-${ind}`}>
                                     <span>{order.cartId}</span><span>{order.title}</span><span>{order.cost}</span><span>{order.quantity}</span><span>{order.subTotal}</span>

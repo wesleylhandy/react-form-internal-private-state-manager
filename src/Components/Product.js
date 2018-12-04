@@ -10,7 +10,7 @@ function Product({description, quantity, cost, title, cartId, handleClick, imgUr
     }
     return (
       <div className="product">
-        { title ? <h2>{title}</h2> : null}
+        { title && <h2>{title}</h2> }
         <div className="product-description-block">
           <div className="product-img">
             <LazyLoadingImg initial={lazyLoad} final={imgUrl} alt={title}/>
